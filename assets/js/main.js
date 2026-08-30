@@ -374,21 +374,37 @@ function render(){
 
   // MEDIA
   var md = d.media;
-  g('md-ey').innerHTML = ey(md.ey, true);
-  g('md-h').innerHTML = '<h2 class="sh">'+md.h[0]+'<br><span class="g">'+md.h[1]+'</span></h2>';
-  ['mph1','mph2','mph3','mph4'].forEach(function(id){ var el=g(id); if(el) el.textContent=md.imgPh; });
-var vidInp = g('vid-inp'); if(vidInp) vidInp.placeholder = md.vidPh;
-  g('vid-btn').textContent = md.embedBtn;
-  var vd = g('vid-def'); if(vd) vd.textContent = md.vidDef;
+  if (md) {
+    var mdEy = g('md-ey'); if (mdEy) mdEy.innerHTML = ey(md.ey, true);
+    var mdH = g('md-h'); if (mdH) mdH.innerHTML = ' <h2 class="sh">' + md.h + '+<br><span class="g">' + md.h + '</span></h2>';
+    ['mph1', 'mph2', 'mph3', 'mph4'].forEach(function(id) { 
+      var el = g(id); if (el) el.textContent = md.imgPh; 
+    });
+    var vidInp = g('vid-inp'); if (vidInp) vidInp.placeholder = md.vidPh;
+    var vidBtn = g('vid-btn'); if (vidBtn) vidBtn.textContent = md.embedBtn;
+    var vd = g('vid-def'); if (vd) vd.textContent = md.vidDef;
+  }
 
   // CERTS
   var cr = d.certs;
-  g('cr-ey').innerHTML = ey(cr.ey, true);
-  g('cr-h').innerHTML = sh(cr.h);
-  g('cr-ll').textContent = cr.licLabel;
-  g('cr-il').textContent = cr.insLabel;
-  g('cr-lics').innerHTML = cr.licenses.map(function(l){ return '<div class="cr-item"><div class="cr-chk">&#10003;</div><span>'+l+'</span></div>'; }).join('');
-  g('cr-ins').innerHTML = cr.insurance.map(function(l){ return '<div class="cr-item"><div class="cr-chk2">&#10003;</div><span>'+l+'</span></div>'; }).join('');
+  if (cr) {
+    var crEy = g('cr-ey'); if (crEy) crEy.innerHTML = ey(cr.ey, true);
+    var crH = g('cr-h'); if (crH) crH.innerHTML = sh(cr.h);
+    var cr11 = g('cr-11'); if (cr11) cr11.textContent = cr.licLabel;
+    var crIl = g('cr-il'); if (crIl) crIl.textContent = cr.insLabel;
+    var crLics = g('cr-lics');
+    if (crLics && cr.licenses) {
+      crLics.innerHTML = cr.licenses.map(function(l) { 
+        return '<div class="cr-item"><div class="cr-chk">&#10003;</div><span>' + l + '</span></div>'; 
+      }).join('');
+    }
+    var crIns = g('cr-ins');
+    if (crIns && cr.insurance) {
+      crIns.innerHTML = cr.insurance.map(function(l) { 
+        return '<div class="cr-item"><div class="cr-chk2">&#10003;</div><span>' + l + '</span></div>'; 
+      }).join('');
+    }
+  }
 
   // CONTACT
   var ct = d.contact;
