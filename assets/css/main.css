@@ -1206,4 +1206,16 @@ body.day-mode #hero {
 }
 body.day-mode .h-photo {
     background-image: url('../images/hero-light.png') !important;
+    position: relative;
+}
+
+body.day-mode .h-photo::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.7) !important;
+    z-index: 1;
 }
