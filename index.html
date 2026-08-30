@@ -287,12 +287,12 @@
     document.body.classList.add('day-mode');
   }
 
-  toggleBtn.addEventListener('click', () => {
+toggleBtn.addEventListener('click', (e) => {
+    e.preventDefault();
     document.body.classList.toggle('day-mode');
     if (document.body.classList.contains('day-mode')) {
-      localStorage.setItem('theme', 'day');
+        localStorage.setItem('theme', 'day');
     } else {
-      localStorage.setItem('theme', 'night');
+        localStorage.setItem('theme', 'night');
     }
-  });
-</script>
+});
