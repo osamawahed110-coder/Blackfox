@@ -1167,5 +1167,5 @@ body.day-mode .theme-toggle-btn {
 
 /* تفتيح خفيف للصورة في الوضع الأبيض على الموبايل فقط لراحة العين */
 body.day-mode .h-photo {
-    opacity: 0.3 !important;
+    opacity: 0.55 !important;
 }
