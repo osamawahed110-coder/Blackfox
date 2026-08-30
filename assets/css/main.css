@@ -1140,9 +1140,9 @@ body.day-mode .theme-toggle-btn {
     background: #111111;
     color: #ffffff;
 }
-/* إجبار الصورة على الظهور في شاشات الموبايل */
+/* إجبار الصورة على الظهور في شاشات الموبايل مع كسر الأنميشن */
 @media (max-width: 991px) {
-    .h-photo {
+    .h-photo, .anim-fadeup {
         display: block !important;
         width: 100% !important;
         position: absolute !important;
