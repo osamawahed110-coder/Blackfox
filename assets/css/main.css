@@ -1140,9 +1140,11 @@ body.day-mode .theme-toggle-btn {
     background: #111111;
     color: #ffffff;
 }
-/* إجبار الصورة على الظهور في شاشات الموبايل مع كسر الأنميشن */
+/* إجبار صورة الهيرو فقط على الظهور في الموبايل ومنع تداخل اللوجوهات */
 @media (max-width: 991px) {
-    .h-photo, .anim-fadeup {
+    .div.h-photo, 
+    .h-photo.anim-fadeup,
+    div.h-photo-proto {
         display: block !important;
         width: 100% !important;
         position: absolute !important;
