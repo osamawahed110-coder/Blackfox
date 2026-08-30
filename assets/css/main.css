@@ -1140,32 +1140,63 @@ body.day-mode .ps-logo {
     transition: background 0.3s ease;
 }
 
-body.day-mode .theme-toggle-btn {
+/* تصميم الزر الـ Premium الافتراضي للوضع الليلي */
+.theme-toggle-btn {
     background: #111111;
-    color: #ffffff;
-}
-/* حل مشكلة تعتيم واختفاء الصورة على الموبايل في الوضعين */
-@media (max-width: 991px) {
-    /* إظهار كلاس الصورة الأصلي بالكامل */
-    .h-photo {
-        display: block !important;
-        position: absolute !important;
-        inset: 0 !important;
-        width: 100% !important;
-        height: 100% !important;
-        opacity: 1 !important; /* خليها كاملة عشان تظهر تفاصيلها الداكنة */
-        z-index: 1 !important;
-    }
-    
-    /* منع العنصر النصي من تعتيم أو تغطية الصورة */
-    .h-col-text {
-        position: relative !important;
-        background: transparent !important; /* إلغاء التدرج الأسود أو الأبيض اللي بيغطي الصورة */
-        z-index: 2 !important; /* رفع النصوص فوق الخلفية عشان تتقرأ بوضوح */
-    }
+    color: #ffc107;
+    border: 2px solid #ffc107;
+    width: 38px;
+    height: 38px;
+    cursor: pointer;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 0 10px rgba(255, 193, 7, 0.2);
 }
 
-/* تفتيح خفيف للصورة في الوضع الأبيض على الموبايل فقط لراحة العين */
-body.day-mode .h-photo {
-    opacity: 0.55 !important;
+/* رسم أيقونة الهلال الذهبي الفخم بالـ CSS داخل الوضع الليلي */
+.theme-toggle-btn::before {
+    content: "";
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    box-shadow: 5px 3px 0 0 #ffc107;
+    position: absolute;
+    transform: rotate(-20deg);
+    transition: all 0.4s ease;
+}
+
+/* التغير اللوني والتصميمي الشامل للزرار عند الانتقال للوضع الأبيض (Day Mode) */
+body.day-mode .theme-toggle-btn {
+    background: #ffffff;
+    border-color: #111111;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* تحول الأيقونة من هلال ذهبي إلى شمس سوداء فخمة وهندسية في الوضع الأبيض */
+body.day-mode .theme-toggle-btn::before {
+    box-shadow: none;
+    background: #111111;
+    width: 14px;
+    height: 14px;
+    transform: scale(1);
+}
+
+body.day-mode .theme-toggle-btn::after {
+    content: "";
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    border: 2px dashed #111111;
+    border-radius: 50%;
+    animation: rotateSun 12s linear infinite;
+}
+
+/* حركة دوران خفيفة لأشعة الشمس الفخمة */
+@keyframes rotateSun {
+    100% { transform: rotate(360deg); }
 }
