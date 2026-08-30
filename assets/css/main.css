@@ -1195,6 +1195,10 @@ body.day-mode .theme-toggle-btn::after {
     border-radius: 50%;
     animation: rotateSun 12s linear infinite;
 }
+body.day-mode #hero {
+    background-image: url('../images/hero-light.png') !important;
+}
+
 
 /* حركة دوران خفيفة لأشعة الشمس الفخمة */
 @keyframes rotateSun {
