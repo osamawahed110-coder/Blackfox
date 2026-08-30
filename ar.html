@@ -279,25 +279,28 @@
 
 
 <script src="assets/js/main.js"></script>
-  <script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
     const toggleBtn = document.getElementById('theme-toggle');
-
-// التحقق من الثيم المحفوظ عند تحميل صفحة العربي
-if (localStorage.getItem('theme') === 'day') {
-    document.body.classList.add('day-mode');
-}
-
-toggleBtn.addEventListener('click', function(event) {
-    event.stopPropagation(); 
-    document.body.classList.toggle('day-mode');
     
-    if (document.body.classList.contains('day-mode')) {
-        localStorage.setItem('theme', 'day');
-    } else {
-        localStorage.setItem('theme', 'night');
+    if (localStorage.getItem('theme') === 'day') {
+        document.body.classList.add('day-mode');
+    }
+
+    if (toggleBtn) {
+        toggleBtn.addEventListener('click', (event) => {
+            event.preventDefault();
+            event.stopPropagation();
+            document.body.classList.toggle('day-mode');
+            
+            if (document.body.classList.contains('day-mode')) {
+                localStorage.setItem('theme', 'day');
+            } else {
+                localStorage.setItem('theme', 'night');
+            }
+        });
     }
 });
 </script>
-
 </body>
 </html>
