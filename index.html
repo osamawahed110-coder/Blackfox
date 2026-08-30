@@ -18,8 +18,7 @@
     </a>
     <div class="nav-links" id="nav-links"></div>
     <div style="display:flex;align-items:center;gap:8px">
-      <button id="theme-toggle" class="theme-toggle-btn">☀️ Day Mode</button>
-
+<button id="theme-toggle" class="theme-toggle-btn">☀️</button>
       <button class="btn-lang" id="lang-mob">&#1593;</button>
       <button class="hamburger" id="hamburger">&#9776;</button>
     </div>
@@ -286,7 +285,7 @@
   
   if (localStorage.getItem('theme') === 'day') {
     document.body.classList.add('day-mode');
-    toggleBtn.textContent = '🌙 Night Mode';
+    toggleBtn.textContent = '🌙';
   }
 
   toggleBtn.addEventListener('click', () => {
@@ -294,10 +293,10 @@
     
     if (document.body.classList.contains('day-mode')) {
       localStorage.setItem('theme', 'day');
-      toggleBtn.textContent = '🌙 Night Mode';
+      toggleBtn.textContent = '🌙';
     } else {
       localStorage.setItem('theme', 'night');
-      toggleBtn.textContent = '☀️ Day Mode';
+      toggleBtn.textContent = '☀️';
     }
   });
 </script>
