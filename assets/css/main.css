@@ -1083,14 +1083,19 @@ body.rtl .wa-float:hover .wa-tooltip{transform:translateY(-50%) translateX(0)}
 }
 /* DAY MODE STYLES SHAMEL */
 body.day-mode, 
-body.day-mode section, 
-body.day-mode div:not(.hero-ticker-wrap):not(.ticker-item), 
+body.day-mode section:not(#home), 
+body.day-mode div:not(.hero-ticker-wrap):not(.ticker-item):not(.h-photo), 
 body.day-mode header, 
 body.day-mode footer, 
 body.day-mode .cr-item {
     background-color: #ffffff !important;
     background-image: none !important;
     color: #111111 !important;
+}
+
+/* تأمين بياض قسم الهيرو مع الحفاظ على صورته المرفوعة */
+body.day-mode #home {
+    background-color: #ffffff !important;
 }
 
 /* تحويل كل النصوص للألوان الداكنة */
