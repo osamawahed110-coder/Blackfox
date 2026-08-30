@@ -1078,3 +1078,6 @@ body.rtl .wa-float:hover .wa-tooltip{transform:translateY(-50%) translateX(0)}
 .ht-logo-img{
   transform:scale(1.06);
 }
+.h-photo {
+    opacity: 1 !important;
+}
