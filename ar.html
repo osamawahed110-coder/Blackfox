@@ -281,16 +281,18 @@
 <script src="assets/js/main.js"></script>
 <script>
 document.addEventListener('DOMContentLoaded', () => {
-    const toggleBtn = document.getElementById('theme-toggle');
+    // لقط كل أزرار المود المتاحة في الصفحة ومنع تضارب الـ id
+    const toggleButtons = document.querySelectorAll('.theme-toggle-btn, #theme-toggle');
     
     if (localStorage.getItem('theme') === 'day') {
         document.body.classList.add('day-mode');
     }
 
-    if (toggleBtn) {
-        toggleBtn.addEventListener('click', (event) => {
+    toggleButtons.forEach(btn => {
+        btn.addEventListener('click', (event) => {
             event.preventDefault();
             event.stopPropagation();
+            
             document.body.classList.toggle('day-mode');
             
             if (document.body.classList.contains('day-mode')) {
@@ -299,7 +301,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 localStorage.setItem('theme', 'night');
             }
         });
-    }
+    });
 });
 </script>
 </body>
