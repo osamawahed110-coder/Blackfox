@@ -377,7 +377,7 @@ function render(){
   g('md-ey').innerHTML = ey(md.ey, true);
   g('md-h').innerHTML = '<h2 class="sh">'+md.h[0]+'<br><span class="g">'+md.h[1]+'</span></h2>';
   ['mph1','mph2','mph3','mph4'].forEach(function(id){ var el=g(id); if(el) el.textContent=md.imgPh; });
-  g('vid-inp').placeholder = md.vidPh;
+var vidInp = g('vid-inp'); if(vidInp) vidInp.placeholder = md.vidPh;
   g('vid-btn').textContent = md.embedBtn;
   var vd = g('vid-def'); if(vd) vd.textContent = md.vidDef;
 
