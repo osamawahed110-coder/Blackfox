@@ -1,6 +1,6 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{background:#000;color:#fff;font-family:'Inter',sans-serif;line-height:1.6}
+html{scroll-behavior:smooth; max-width:100%; overflow-x:hidden;}
+body{background:#000;color:#fff;font-family:'Inter',sans-serif;line-height:1.6; max-width:100%; overflow-x:hidden;}
 body.rtl{font-family:'Cairo','Inter',sans-serif}
 img{max-width:100%;display:block}
 a{text-decoration:none;color:inherit}
