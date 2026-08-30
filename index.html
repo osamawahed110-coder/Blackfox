@@ -278,21 +278,29 @@
 
 
 <script src="assets/js/main.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const toggleButtons = document.querySelectorAll('.theme-toggle-btn, #theme-toggle');
+    
+    if (localStorage.getItem('theme') === 'day') {
+        document.body.classList.add('day-mode');
+    }
+
+    toggleButtons.forEach(btn => {
+        btn.addEventListener('click', (event) => {
+            event.preventDefault();
+            event.stopPropagation();
+            
+            document.body.classList.toggle('day-mode');
+            
+            if (document.body.classList.contains('day-mode')) {
+                localStorage.setItem('theme', 'day');
+            } else {
+                localStorage.setItem('theme', 'night');
+            }
+        });
+    });
+});
+</script>
 </body>
 </html>
-<script>
-  const toggleBtn = document.getElementById('theme-toggle');
-
-  if (localStorage.getItem('theme') === 'day') {
-    document.body.classList.add('day-mode');
-  }
-
-toggleBtn.addEventListener('click', (e) => {
-    e.preventDefault();
-    document.body.classList.toggle('day-mode');
-    if (document.body.classList.contains('day-mode')) {
-        localStorage.setItem('theme', 'day');
-    } else {
-        localStorage.setItem('theme', 'night');
-    }
-});
