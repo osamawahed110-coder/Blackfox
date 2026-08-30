@@ -1204,3 +1204,6 @@ body.day-mode #hero {
 @keyframes rotateSun {
     100% { transform: rotate(360deg); }
 }
+body.day-mode .h-photo {
+    background-image: url('../images/hero-light.png') !important;
+}
