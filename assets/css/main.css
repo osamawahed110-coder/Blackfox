@@ -1081,32 +1081,57 @@ body.rtl .wa-float:hover .wa-tooltip{transform:translateY(-50%) translateX(0)}
 .h-photo {
     opacity: 1 !important;
 }
-/* DAY MODE STYLES */
-body.day-mode {
-    background: #ffffff !important;
+/* DAY MODE STYLES SHAMEL */
+body.day-mode, 
+body.day-mode section, 
+body.day-mode div:not(.hero-ticker-wrap):not(.ticker-item), 
+body.day-mode header, 
+body.day-mode footer, 
+body.day-mode .cr-item {
+    background-color: #ffffff !important;
+    background-image: none !important;
     color: #111111 !important;
 }
 
-body.day-mode #home {
-    background-color: #f8f9fa !important;
-}
-
+/* تحويل كل النصوص للألوان الداكنة */
 body.day-mode p, 
-body.day-mode .sh, 
+body.day-mode span:not(.g), 
 body.day-mode h1, 
 body.day-mode h2, 
-body.day-mode h3 {
+body.day-mode h3, 
+body.day-mode h4, 
+body.day-mode h5, 
+body.day-mode h6, 
+body.day-mode a:not(.btn-p):not(.quote-btn) {
     color: #111111 !important;
 }
 
-/* زر التبديل في أعلى الشاشة */
+/* الحفاظ على لون كروت الخدمات والشهادات بشكل منسق */
+body.day-mode .s-card, 
+body.day-mode .cr-item, 
+body.day-mode .ps-logo {
+    background: #f8f9fa !important;
+    border: 1px solid #e0e0e0 !important;
+}
+
+/* تنسيق الزر كـ أيقونة دائرية صغيرة */
 .theme-toggle-btn {
     background: #ffc107;
     color: #000;
     border: none;
-    padding: 8px 12px;
+    width: 36px;
+    height: 36px;
     cursor: pointer;
-    font-weight: bold;
-    border-radius: 4px;
+    font-size: 16px;
+    border-radius: 50%; /* يجعله دائرياً بالكامل */
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin-left: 10px;
+    transition: background 0.3s ease;
+}
+
+body.day-mode .theme-toggle-btn {
+    background: #111111;
+    color: #ffffff;
 }
