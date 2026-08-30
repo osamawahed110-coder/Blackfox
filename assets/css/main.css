@@ -1140,3 +1140,13 @@ body.day-mode .theme-toggle-btn {
     background: #111111;
     color: #ffffff;
 }
+/* إجبار الصورة على الظهور في شاشات الموبايل */
+@media (max-width: 991px) {
+    .h-photo {
+        display: block !important;
+        width: 100% !important;
+        position: absolute !important;
+        inset: 0 !important;
+        opacity: 0.15 !important;
+    }
+}
