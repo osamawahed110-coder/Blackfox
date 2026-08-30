@@ -1140,16 +1140,28 @@ body.day-mode .theme-toggle-btn {
     background: #111111;
     color: #ffffff;
 }
-/* إجبار صورة الهيرو على الظهور بوضوح مخصص للشاشة البيضاء على الموبايل */
+/* حل مشكلة تعتيم واختفاء الصورة على الموبايل في الوضعين */
 @media (max-width: 991px) {
-    .div.h-photo, 
-    .h-photo.anim-fadeup,
-    div.h-photo-proto {
+    /* إظهار كلاس الصورة الأصلي بالكامل */
+    .h-photo {
         display: block !important;
-        width: 100% !important;
         position: absolute !important;
         inset: 0 !important;
-        opacity: 0.45 !important; /* رفعنا الشفافية عشان تظهر التفاصيل الداكنة */
-        filter: contrast(110%) brightness(105%) !important; /* تفتيح بسيط لضبط الصورة الليلية مع البياض */
+        width: 100% !important;
+        height: 100% !important;
+        opacity: 1 !important; /* خليها كاملة عشان تظهر تفاصيلها الداكنة */
+        z-index: 1 !important;
     }
+    
+    /* منع العنصر النصي من تعتيم أو تغطية الصورة */
+    .h-col-text {
+        position: relative !important;
+        background: transparent !important; /* إلغاء التدرج الأسود أو الأبيض اللي بيغطي الصورة */
+        z-index: 2 !important; /* رفع النصوص فوق الخلفية عشان تتقرأ بوضوح */
+    }
+}
+
+/* تفتيح خفيف للصورة في الوضع الأبيض على الموبايل فقط لراحة العين */
+body.day-mode .h-photo {
+    opacity: 0.3 !important;
 }
