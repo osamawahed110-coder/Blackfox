@@ -297,12 +297,16 @@ document.addEventListener('DOMContentLoaded', () => {
             
             if (document.body.classList.contains('day-mode')) {
                 localStorage.setItem('theme', 'day');
-            } else {
-                localStorage.setItem('theme', 'night');
-            }
-        });
+        localStorage.setItem('theme', 'night');
+      }
     });
+  });
 });
+
+localStorage.setItem('lang', 'ar');
+lang = 'ar';
+render();
+g('lang-mob').textContent = 'E';
 </script>
 </body>
 </html>
