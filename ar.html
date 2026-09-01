@@ -19,7 +19,7 @@
     <div class="nav-links" id="nav-links"></div>
     <div style="display:flex;align-items:center;gap:8px">
       <button id="theme-toggle" class="theme-toggle-btn"></button>
-<a href="index.html" class="btn-lang" style="color: #ffcc00; text-decoration: none; font-weight: bold; font-family: sans-serif; padding: 5px 15px; border: 1px solid #ffcc00; border-radius: 4px; display: inline-block; margin: 0 5px;">English</a>
+      <button class="btn-lang" id="lang-mob">&#1593;</button>
       <button class="hamburger" id="hamburger">&#9776;</button>
     </div>
   </div>
@@ -230,77 +230,7 @@
   </div>
 </section>
 
-<!-- ========================================== -->
-<!-- 1. قسم طلب التوظيف عبر الواتساب -->
-<!-- ========================================== -->
-<section class="careers-section" style="direction: rtl; text-align: right; padding: 40px 20px; background-color: #111; color: #fff; border-radius: 8px; max-width: 600px; margin: 40px auto; font-family: sans-serif; border: 1px solid #ffcc00;">
-    <h2 style="color: #ffcc00; text-align: center; margin-bottom: 20px;">طلب انضمام لفريق العمل</h2>
-    <form id="whatsappForm" onsubmit="sendToWhatsApp(event)">
-        
-        <div style="margin-bottom: 15px;">
-            <label for="applicantName" style="display: block; margin-bottom: 5px; color: #ccc;">الاسم بالكامل:</label>
-            <input type="text" id="applicantName" required placeholder="أدخل اسمك الثلاثي" style="width: 100%; padding: 10px; border: 1px solid #444; background: #222; color: #fff; border-radius: 4px;">
-        </div>
-        
-        <div style="margin-bottom: 15px;">
-            <label for="applicantPhone" style="display: block; margin-bottom: 5px; color: #ccc;">رقم الهاتف (واتساب):</label>
-            <input type="tel" id="applicantPhone" required placeholder="مثال: 010XXXXXXXX" style="width: 100%; padding: 10px; border: 1px solid #444; background: #222; color: #fff; border-radius: 4px; text-align: right;">
-        </div>
-        
-        <div style="margin-bottom: 15px;">
-            <label for="applicantAge" style="display: block; margin-bottom: 5px; color: #ccc;">السن:</label>
-            <input type="number" id="applicantAge" required placeholder="أدخل عمرك" style="width: 100%; padding: 10px; border: 1px solid #444; background: #222; color: #fff; border-radius: 4px;">
-        </div>
-        
-        <div style="margin-bottom: 20px;">
-            <label for="jobTitle" style="display: block; margin-bottom: 5px; color: #ccc;">الوظيفة المتقدم إليها:</label>
-            <select id="jobTitle" required style="width: 100%; padding: 10px; border: 1px solid #444; background: #222; color: #fff; border-radius: 4px;">
-                <option value="" disabled selected>اختر الوظيفة</option>
-                <option value="فرد أمن وحراسة">فرد أمن وحراسة</option>
-                <option value="مشرف موقع أمني">مشرف موقع أمني</option>
-                <option value="مراقب كاميرات (CCTV)">مراقب كاميرات (CCTV)</option>
-            </select>
-        </div>
-        
-        <button type="submit" style="width: 100%; padding: 12px; background-color: #ffcc00; color: #000; border: none; font-weight: bold; font-size: 16px; border-radius: 4px; cursor: pointer; transition: 0.3s; text-align: center;">إرسال البيانات عبر الواتساب 💬</button>
-    </form>
-</section>
-
-<!-- ========================================== -->
-<!-- 2. كود زرار الواتساب العائم وتنسيقه الخاص -->
-<!-- ========================================== -->
-<a href="https://whatsapp.com." class="whatsapp-floating-btn" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
-    <svg viewBox="0 0 24 24" width="32" height="32" fill="#fff">
-        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.513 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.503-5.729-1.457L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.863-9.755.002-2.61-1.002-5.062-2.826-6.889-1.825-1.826-4.253-2.83-6.861-2.83-5.442 0-9.868 4.37-9.87 9.756-.002 1.76.476 3.477 1.385 5.013l-.999 3.648 3.743-.969zm11.367-7.311c-.12-.2-.443-.321-.926-.562-.483-.241-2.855-1.41-3.298-1.571-.443-.16-.765-.241-1.087.241-.322.482-1.248 1.571-1.53 1.893-.283.322-.565.361-1.048.12-.483-.241-2.04-.752-3.886-2.399-1.436-1.282-2.405-2.866-2.687-3.348-.283-.482-.03-.742.211-.981.218-.215.483-.562.725-.843.242-.282.322-.483.483-.804.162-.321.08-.603-.04-.844-.12-.242-1.087-2.613-1.49-3.578-.392-.95-.791-.821-1.087-.836-.28-.014-.603-.016-.926-.016-.322 0-.845.12-1.288.603-.443.482-1.69 1.648-1.69 4.02 0 2.371 1.73 4.662 1.972 4.984.242.321 3.405 5.201 8.249 7.288 1.152.496 2.051.793 2.752 1.017 1.157.368 2.21.316 3.042.192.928-.139 2.855-1.166 3.257-2.29.403-1.124.403-2.09.282-2.29z"/>
-    </svg>
-</a>
-
-<style>
-.whatsapp-floating-btn {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    background-color: #25d366;
-    color: white;
-    border-radius: 50px;
-    width: 60px;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-    z-index: 9999;
-    transition: all 0.3s ease;
-}
-.whatsapp-floating-btn:hover {
-    transform: scale(1.1);
-    box-shadow: 0px 6px 15px rgba(37, 211, 102, 0.5);
-    background-color: #20ba5a;
-}
-</style>
-
- 
-  <footer>
+<footer>
   <div class="wrap">
     <div class="ft-main">
 
@@ -373,25 +303,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
-  function sendToWhatsApp(event) {
-    event.preventDefault();
-    const companyPhoneNumber = "201122480580"; 
-    const name = document.getElementById('applicantName').value;
-    const phone = document.getElementById('applicantPhone').value;
-    const age = document.getElementById('applicantAge').value;
-    const job = document.getElementById('jobTitle').value;
-
-    const message = `*طلب توظيف جديد - Black Fox Security* \n\n` +
-                    `👤 *الاسم:* ${name}\n` +
-                    `📱 *رقم الهاتف:* ${phone}\n` +
-                    `🎂 *السن:* ${age} سنة\n` +
-                    `💼 *الوظيفة المطلوبة:* ${job}`;
-
-    const encodedMessage = encodeURIComponent(message);
-    const whatsappURL = `https://whatsapp.com{companyPhoneNumber}&text=${encodedMessage}`;
-    window.open(whatsappURL, '_blank');
-}
-
 </script>
 </body>
 </html>
