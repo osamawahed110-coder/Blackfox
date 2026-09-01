@@ -228,6 +228,60 @@
     </div>
   </div>
 </section>
+<!-- START JOBS SECTION -->
+<section id="jobs" style="background-color: #000; padding: 60px 20px; text-align: center; font-family: 'Inter', sans-serif;">
+    <div style="max-width: 600px; margin: 0 auto; background: #0b0b0b; padding: 40px; border-radius: 8px; border: 1px solid #1a1a1a; box-shadow: 0 4px 15px rgba(0,0,0,0.5);">
+        
+        <h2 style="color: #ffc107; font-family: 'Bebas Neue', sans-serif; font-size: 36px; letter-spacing: 1px; margin-bottom: 10px; text-transform: uppercase; text-align: center;">Join Our Team</h2>
+        <p style="color: #ccc; font-size: 15px; margin-bottom: 30px; text-align: center;">Apply now for available security positions at Black Fox</p>
+        
+        <form id="enJobForm" style="text-align: left; direction: ltr;">
+            <!-- Name Field -->
+            <div style="margin-bottom: 20px;">
+                <label for="enApplicantName" style="display: block; color: #fff; font-size: 14px; font-weight: 500; margin-bottom: 8px;">Full Name *</label>
+                <input type="text" id="enApplicantName" required placeholder="Enter your full name" style="width: 100%; padding: 12px; background: #111; border: 1px solid #333; color: #fff; border-radius: 4px; font-size: 14px; box-sizing: border-box;">
+            </div>
+
+            <!-- Phone Field -->
+            <div style="margin-bottom: 20px;">
+                <label for="enApplicantPhone" style="display: block; color: #fff; font-size: 14px; font-weight: 500; margin-bottom: 8px;">Phone Number *</label>
+                <input type="tel" id="enApplicantPhone" required placeholder="e.g. 01XXXXXXXXX" style="width: 100%; padding: 12px; background: #111; border: 1px solid #333; color: #fff; border-radius: 4px; font-size: 14px; box-sizing: border-box;">
+            </div>
+
+            <!-- Position Dropdown -->
+            <div style="margin-bottom: 30px;">
+                <label for="enJobPosition" style="display: block; color: #fff; font-size: 14px; font-weight: 500; margin-bottom: 8px;">Desired Position *</label>
+                <select id="enJobPosition" required style="width: 100%; padding: 12px; background: #111; border: 1px solid #333; color: #fff; border-radius: 4px; font-size: 14px; box-sizing: border-box; cursor: pointer;">
+                    <option value="" disabled selected>Select a position...</option>
+                    <option value="Security Guard">Security Guard</option>
+                    <option value="Security Supervisor">Security Supervisor</option>
+                </select>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" style="width: 100%; padding: 14px; background-color: #ffc107; color: #000; border: none; border-radius: 4px; font-size: 16px; font-weight: bold; cursor: pointer; text-transform: uppercase; transition: background 0.3s ease;">
+                Submit via WhatsApp
+            </button>
+        </form>
+    </div>
+</section>
+
+<script>
+document.getElementById('enJobForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const name = document.getElementById('enApplicantName').value;
+    const phone = document.getElementById('enApplicantPhone').value;
+    const position = document.getElementById('enJobPosition').value;
+
+    const text = `New Job Application (Black Fox):\n\n` +
+                 `• Name: ${name}\n` +
+                 `• Phone: ${phone}\n` +
+                 `• Position: ${position}`;
+
+    window.open(`https://wa.me{encodeURIComponent(text)}`, '_blank');
+});
+</script>
+<!-- END JOBS SECTION -->
 
 <footer>
   <div class="wrap">
