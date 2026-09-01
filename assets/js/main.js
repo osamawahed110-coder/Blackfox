@@ -257,7 +257,6 @@ function render(){
   for(var i=0;i<ids.length;i++){
     nl += '<a href="#' + ids[i] + '">' + d.nav[ids[i]] + '</a>';
   }
-  nl += '<button class="btn-lang" id="nl-lang">' + (lang==='en' ? 'العربية' : 'EN') + '</button>';
   nl += '<a href="#contact" class="btn-quote" onclick="var t=document.getElementById(\'contact\'); if(t){event.preventDefault();t.scrollIntoView({behavior:\'smooth\'});}">' + d.nav.quote + '</a>';
   g('nav-links').innerHTML = nl;
 
