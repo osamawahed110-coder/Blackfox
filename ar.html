@@ -51,7 +51,7 @@
   <div class="scroll-l"><div></div></div>
   <!-- TICKER inside hero at bottom -->
   <div class="hero-ticker-wrap">
-<div id="ticker"><span style="display: inline-block; animation: marquee-arabic 25s linear infinite; padding-right: 50px;">✦ نظام نشط ✦ جميع الوحدات تعمل ✦ وحدات K9 منتشرة ✦ مراقبة على مدار الساعة ✦ المحيط آمن ✦ نظام نشط ✦ جميع الوحدات تعمل ✦ وحدات K9 منتشرة ✦ مراقبة على مدار الساعة ✦ المحيط آمن</span></div>
+<div id="ticker"><span class="ar-ticker-text">✦ نظام نشط ✦ جميع الوحدات تعمل ✦ وحدات K9 منتشرة ✦ مراقبة على مدار الساعة ✦ المحيط آمن</span></div>
   </div>
 </section>
 
@@ -357,20 +357,23 @@ g('lang-mob').textContent = 'E';
   </svg>
 </a>
 <!-- TICKER ANIMATION FIX -->
-<style<style>
+<style>
 #ticker {
-    overflow: hidden;
-    white-space: nowrap;
-    direction: rtl !important; /* رجعنا الاتجاه عربي عشان النص يظهر في مكانه */
+    overflow: hidden !important;
+    white-space: nowrap !important;
+    direction: rtl !important;
+    display: block !important;
 }
-#ticker span {
-    display: inline-block;
-    padding-left: 100%; /* بيسيب مساحة دخول للنص من اليسار */
-    animation: marquee-arabic 25s linear infinite;
+
+#ticker .ar-ticker-text {
+    display: inline-block !important;
+    padding-left: 100% !important;
+    animation: marquee-arabic 25s linear infinite !important;
 }
+
 @keyframes marquee-arabic {
-    0% { transform: translate3d(100%, 0, 0); } /* يبدأ الدخول من اليمين تماماً */
-    100% { transform: translate3d(-100%, 0, 0); } /* يخرج بالكامل من اليسار ويلف تاني */
+    0% { transform: translate3d(100%, 0, 0); }
+    100% { transform: translate3d(-100%, 0, 0); }
 }
 </style>
 
