@@ -357,17 +357,23 @@ g('lang-mob').textContent = 'E';
   </svg>
 </a>
 <!-- TICKER ANIMATION FIX -->
-<style>
+<style<style>
 #ticker {
     overflow: hidden;
     white-space: nowrap;
-    direction: ltr !important; /* تثبيت الاتجاه لحساب حركة المئوية بشكل صحيح */
+    direction: rtl !important; /* رجعنا الاتجاه عربي عشان النص يظهر في مكانه */
+}
+#ticker span {
+    display: inline-block;
+    padding-left: 100%; /* بيسيب مساحة دخول للنص من اليسار */
+    animation: marquee-arabic 25s linear infinite;
 }
 @keyframes marquee-arabic {
-    0% { transform: translate3d(0, 0, 0); }
-    100% { transform: translate3d(-50%, 0, 0); } /* الحركة بتلف وترجع لنقطة البداية المكررة بسلاسة */
+    0% { transform: translate3d(100%, 0, 0); } /* يبدأ الدخول من اليمين تماماً */
+    100% { transform: translate3d(-100%, 0, 0); } /* يخرج بالكامل من اليسار ويلف تاني */
 }
 </style>
+
 
 </body>
 </html>
