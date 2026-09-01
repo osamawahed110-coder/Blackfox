@@ -294,13 +294,16 @@ document.addEventListener('DOMContentLoaded', () => {
             document.body.classList.toggle('day-mode');
             
             if (document.body.classList.contains('day-mode')) {
-                localStorage.setItem('theme', 'day');
-            } else {
-                localStorage.setItem('theme', 'night');
-            }
-        });
+        localStorage.setItem('theme', 'night');
+      }
     });
+  });
 });
+
+localStorage.setItem('lang', 'en');
+lang = 'en';
+render();
+g('lang-mob').textContent = 'ع';
 </script>
 </body>
 </html>
