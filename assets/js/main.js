@@ -225,7 +225,7 @@ function ey(txt, center){
   return '<div class="' + cls + '"><span>' + txt + '</span></div>';
 }
 function sh(lines){
-  var html = '<h2 class="sh">';
+var html = '<h2 class="sh" style="line-height: 1.4;">';
   for(var i=0;i<lines.length;i++){
     if(i>0) html += '<br>';
     if(i===1) html += '<span class="g">' + lines[i] + '</span>';
